@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#main{
+		position:relative;
+		width:2200px;
+		height:150px;
+		margin:0px;
+		padding:0px;
+	}
+	#main>img{
+		width:110px;
+		height:150px;
+	}
+	#lButton, #rButton{
+		float:left;
+		width:30px;
+		height:150px;
+		margin:0;
+		padding:0;
+	}
+	#frame{
+		width:800px;
+		height:150px;
+		margin:0;
+		padding:0;
+		overflow:hidden;
+		float:left;
+	}
+	#content{
+		width:860px;
+		height:150px;
+		margin:0 auto;
+
+	}
+</style>
+<script>
+	var allImg = ['movie01.png','movie02.png','movie03.png','movie04.png','movie05.png','movie06.png','movie07.png','movie08.png','movie09.png','movie10.png',
+					'movie11.png','movie12.png','movie13.png','movie14.png','movie15.png','movie16.png','movie17.png','movie18.png','movie19.png','movie20.png',];
+	function setImage(){
+		var imgTag = "";
+		for(i=0; i<allImg.length; i++){
+			imgTag += "<img src='img/"+allImg[i]+"'/>"; 
+		}
+		document.getElementById("main").innerHTML=imgTag;
+	}
+
+	var x=0, y=0, xStep=5, movement=1;
+	var leftGo=setInterval('leftSlide()', 100);
+	var rightGo=setInterval('rightSlide()', 100);
+	clearInterval(rightGo);
+	
+	function leftEvent(){
+		movement=1;
+		clearInterval(rightGo);
+		clearInterval(leftGo);
+		leftGo=setInterval('leftSlide()', 100);
+		leftSlide()
+	}
+	function rightEvent(){
+		movement=2;
+		clearInterval(rightGo);
+		clearInterval(leftGo);
+		leftGo=setInterval('rightSlide()', 100);
+		rightSlide()
+	}
+	function leftSlide(){
+		movement=1;
+		x += xStep;
+		var w = document.getElementById("main").style;
+		w.left = x+"px";
+		xStep=-5;
+		if(x<=-1400){
+			clearInterval(rightGo);
+			clearInterval(leftGo);
+			rightGo=setInterval('rightSlide()', 100);
+		}
+	}
+	
+	function rightSlide(){
+		movement=2;
+		x += xStep;
+		var w = document.getElementById("main").style;
+		w.left = x+"px";
+		xStep=+5;
+		if(x>0){
+			clearInterval(rightGo);
+			clearInterval(leftGo);
+			leftGo=setInterval('leftSlide()', 100);
+		}
+	}
+	
+	function mouseOver(){
+		clearInterval(rightGo);
+		clearInterval(leftGo);
+	}
+	
+	function mouseOut(){
+		if(movement==1){
+			leftEvent()
+		}else{
+			rightEvent()
+		}
+	}
+</script>
+</head>
+<body onload="setImage();">
+<div id="content">
+	<input id="lButton" type="button" value="◁" onclick="leftEvent()"/>
+	<div id="frame">
+	<div id="main" onmouseover="mouseOver()" onmouseleave="mouseOut()"></div>
+	</div>
+	<input id="rButton" type="button" value="▷" onclick="rightEvent()"/>
+</div>
+
+
+</body>
+</html>

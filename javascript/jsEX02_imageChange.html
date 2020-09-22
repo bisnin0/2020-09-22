@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img{
+		width:200px; 
+		height:200px;
+	}
+	
+</style>
+<script>
+	function change(){
+		document.getElementById("i").src="../img/K6.jpg"; //바디의 아이디 i를 가져와서 src속성을 바꿔라 
+		
+	}
+
+</script>
+</head>
+<body>
+<img src="../img/k1.jpg" id="i" onclick="change()"/> <!-- 마우스 클릭하면 이미지 바뀌게 하기 -->
+<img src="../img/2.png" id="i2" onmouseover="this.src='../img/3.png'" onmouseout="this.src='../img/2.png'"/> <!-- this를쓰면 내 코드가 있는곳. 즉 img를 말하는것. -->
+<!-- 마우스 올리면 이미지 바뀌게, 마우스 빼면 이미지 바뀌게하기 -->
+</body>
+
+</html>

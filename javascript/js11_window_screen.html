@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var win;
+	function popupOpen(){
+		//창을 생성하여 띄운다. = window.
+		//				내용		창 이름	옵션
+		win = window.open("popup.html","w1",	"width=400px,height=400px,left=200px,top=200px");
+					// 똑같은 창이 이미 띄워져있을때는 같은창이 안뜬다. 창이름이 없으면 계속 창일 띄울 수 있다.
+					
+	}
+	function popupClose(){
+		// 윈도우객체.close(), self.close() 윈도우 창을닫는 방법 2가지
+		//self.close() = 현재 이 코드가 실행되고 있는 창을 닫는다.
+		//self.close(); =>자신의 window를 닫는다.
+		//창을 닫으려면 연 창을 객체로 만들어서 그걸 이용해서 닫아야 한다. 위에 win 변수를 선언하고 window.open을 win에 담아주고 그걸 이용해 닫음
+		win.close();
+		
+	}
+	function windowMove(){
+		//절대좌표로 이동
+		//				x , y
+		//	win.moveTo(100,100);
+		
+		//상대좌표로 이동
+		//				x,y
+			win.moveBy(10,-10);
+	}
+	function windowResize(){
+		//절대사이즈
+		//	win.resizeTo(500,500); //딱 정해진 사이즈로 한번 바뀐다.
+		
+		//상대사이즈
+		//			     w , h
+			win.resizeBy(10,10); //현재 사이즈를 기준으로 이만큼 크게 해준다. 계속할수있다.
+	}
+	function getWindowInfo(){
+		var info = "";
+		//윈도우 객체의 정보얻어오기.. 변수라 ()괄호가 없다.
+		//좌표구하기
+		info += "x좌표="+ win.screenX+"<br/>";
+		info += "y좌표="+ win.screenY+"<br/>";
+		//윈도우의 폭과 높이 
+		//1. 전체 폭과 높이
+		info += "창의 폭="+ window.outerWidth +"<br/>"; //팝업창이 아니라 버튼있는창
+		info += "창의 높이="+ window.outerHeight +"<br/>";
+		//2. 내용을 표시하는 폭과 높이
+		info += "컨텐츠폭="+ window.innerWidth +"<br/>"; //이건 팝업창 객체로 안구해지네. 버튼있는창으로 구했음
+		info += "컨텐츠높이="+ window.innerHeight +"<br/>";
+		
+		//화면의 폭과 높이
+		info += "화면폭=" + screen.width +"<br/>"
+		info += "화면높이=" + screen.height +"<br/>"
+		//작업표시줄을 제외한 폭과 높이 구하기
+		info += "화면폭=" +screen.availWidth +"<br/>";
+		info += "화면높이=" +screen.availHeight +"<br/>";
+		
+		document.getElementById("winInfo").innerHTML = info;
+		
+	}
+</script>
+</head>
+<body onload="popupOpen(); getWindowInfo();"> <!-- onload로 팝업등록하면 창열면 무조건 하나 뜬다. -->
+<input type="button" value="팝업띄우기" onclick="popupOpen()"/>
+<input type="button" value="팝업닫기" onclick="popupClose()"/>
+<input type="button" value="윈도우이동" onclick="windowMove()"/>
+
+<button onclick="windowResize();"> 윈도우 크기 조절 </button> <!-- 이렇게 하면 '윈도우 크기 조절'이 value값이 된다. -->
+
+<div id="winInfo"></div>
+
+</body>
+</html>

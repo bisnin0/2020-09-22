@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//날짜와 시간 관련 클래스
+	function getDateTime(){
+		//2020년 09월 14일(월요일) 12시05분
+		
+		var date = new Date(); //여기선 calendar가 없고 date()라는 클래스가 있다.
+					//오늘날짜, 시간
+		var date2 = new Date("2020.05.15"); // "2020/05/15  "2020-05-15 표시 형식은 이렇게 써도 된다. "			
+		
+		var date3 = new Date(876237462123); //밀리초. ms.. 1970년 1월 1일 0시 0분0초를 기점으로 1초에 1000씩 계산된다.
+		
+		/*
+			년 : getFullYear() 
+			월 : getMonth()   => 자바와 똑같이 지금이 9월이면 8이 구해진다. +1을 해야 현재 달이 나온다.
+			일 : getDate()
+			시 : getHours()
+			분 : getMinutes()
+			초 : getSeconds()   시/분/초는 끝에 s가 붙어있다.
+			요일 : getDay()   => 숫자로 구해진다. 일요일->0, 월요일->1, 화요일->2,....토요일->6
+		*/
+		
+		var dateTxt = date.getFullYear()+"년";
+		dateTxt += date.getMonth()+1+"월"; //월이라 +1해줘야한다.
+		dateTxt += date.getDate()+"일";
+		
+		var weekTxt="";
+		switch(date.getDay()){
+		case 0: weekTxt="일";break;
+		case 1: weekTxt="월";break;
+		case 2: weekTxt="화";break;
+		case 3: weekTxt="수";break;
+		case 4: weekTxt="목";break;
+		case 5: weekTxt="금";break;
+		case 6: weekTxt="토";break;
+		}
+		dateTxt += "("+weekTxt+")";
+		dateTxt += date.getHours()+"시";
+		dateTxt += date.getMinutes()+"분";
+		
+		document.getElementById("viewDate").innerHTML= dateTxt;
+		
+	}
+</script>
+</head>
+<body>
+<h1 id="viewDate"></h1>
+<script>
+	getDateTime();
+</script>
+</body>
+</html>

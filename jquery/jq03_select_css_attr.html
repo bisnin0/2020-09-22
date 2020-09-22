@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script>
+	$(document).ready(function(){
+		// 선택자 : 태그, 아이디선택자, 클래스선택자 ....
+		// 태그선택자 ->h1태그에 글자색 스타일
+		$("h1").css("color","blue");
+		$(".c1").css("border","1px solid gray"); //클래스가 c1인것만
+		$("#t1").css("background-color","lightblue");
+		
+		$("h1").css("background-image","url(../img/3.png)").css("color","red");
+		
+	});
+</script>
+</head>
+<body>
+<input type="text" id="txt"/><br/>
+<h1 class="c1">Jquery에서 클래스 선택자</h1>
+<h1 id="t1">Jquery에서 아이디 선택자</h1>
+<h1 class="c1">Jquery에서 클래스 선택자</h1>
+<img src="../img/flower.png"/>
+</body>
+</html>

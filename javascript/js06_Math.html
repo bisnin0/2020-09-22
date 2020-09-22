@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function setMathTest(){
+		var num = 253.654;
+		var r="";
+		
+		//pi값
+		r +="Math.PI=" + Math.PI+"<br/>";//PI값 //파이값 ... 유일하게변수임. 대문자 유의
+		r +="Math.pow=" + Math.pow(5,3)+"<br/>"; //5의 3승. 첫번째 수의 2번째수 제곱
+		r +="Math.round=" + Math.round(num)+"<br/>"; //반올림
+		r +="Math.ceil=" + Math.ceil(num)+ "<br/>"; //올림
+		r +="Math.floor=" + Math.floor(num) + "<br/>"; //버림
+		r +="Math.max=" + Math.max(344,123,32,12,62,23)+"<br/>"; //최대값. 제일 높은 수. 수 입력은 몇개여도 상관없다.
+		r +="Math.min=" + Math.min(3,23,52,123,345,332,12,523)+"<br/>"; //최소값
+		r +="Math.random=" + Math.random() + "<br/>"; //난수구하는것. 랜덤
+		r +="Math.sqrt=" + Math.sqrt(10)+"<br/>"; //루트값 구하는것.
+		r +="Math.abs=" + Math.abs(-43.43); //절대값
+		
+		document.getElementById("result").innerHTML = r; //지금은 이렇게해도 안보임. function은 호출해야 되니때문에.
+	}
+</script>
+</head>
+<body onload="setMathTest();"> <!-- 바디에 onload 이벤트를 쓰면 바디의 모든 작업이 끝난 후 onload를 실행한다. -->
+								<!-- div가 생성 된 뒤에 실행한다고 생각하면 된다. -->
+<div id="result"></div>
+</body>
+</html>

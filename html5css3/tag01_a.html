@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>A태그</title>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+<h1 id="top">a태그를 이용한 현재 페이지의 특정위치로 이동하기</h1> <!-- top이라고 아이디 잡음 -->
+<a href="#bottom">가장 밑으로 이동</a><br/>
+1. <a href="#i1">HTML이란?</a><br/>  <!-- 앞에 #을 넣어야 이 페이지 내의 목표로 이동함 -->
+2. <a href="#i2">JAVASCRIPT란?</a><br/>
+3. <a href="#i3">JSP란?</a><br/>
+4. <a href="#i4">SPRING이란?</a><br/>
+
+		<!--href는 속성이라고 하고 오른쪽엔 속성 값을 넣는거다. 속성은 태그마다 다 따로 있다. 태그의 특성에 따라서 -->
+		<!-- 속성값으로 표시하는 페이지로 이동한다. -->
+		<!-- 상대주소지정방식, 절대주소지정방식 .. 페이지로 이동하는방법 두가지-->
+		<!-- 내가 있는 위치를 기준으로 해서 상대방 주소를 찾는것 : 상대주소지정방식 -->
+		<!-- 내가 어디 있던 상관 없이 무조건 제일 첫번째 위치부터 찾아가는것.:절대주소지정방식 -->
+		<!-- 상대주소지정방식 -> 한폴더 위로 가는것 : .. 입력 -->								
+		<!-- 속성값에 ../index.html 치면 한폴더 위의 index.html을 실행한다. -->		
+
+		<!-- 
+		속성 = 속성값
+		href = "이동페이지 주소"
+		target 속성 : 현재창 또는 새창에 페이지이동
+				_blank : 새창으로 열기
+		title 속성 : 풍선도움말
+		
+		 -->
+
+
+<h1>텍스트에 링크걸기</h1>
+<a href="../Index.html" target="_blank" title="Go Home~~~">홈페이지로 이동하기</a> <br/>
+				
+			
+<a href="https://www.nate.com/">네이트 홈페이지로 이동</a>		<br/>
+<a href="https://sports.news.nate.com/view/20200903n10757">손흥민</a>	
+<a href="https://n.weather.naver.com/today">오늘의 날씨</a>
+<h1>이미지에 링크걸기</h1>
+<a href="https://www.daum.net" target="_blank"><img src="../img/3.png" width="100"></a>			
+<a href="tag02_img.html"><img src="../img/2.png" width="100"></a>
+<h1>다운로드</h1>
+<a href="../etc/here.pdf">pdf파일(실행)</a><br/> <!-- 웹에서 실행 가능한 파일 다운로드 링크를 걸면 다운로드가 아니라 바로 실행된다. -->
+<a href="../etc/bb.hwp">hwp파일(down))</a><br/>
+<a href="../etc/aa.java">java파일(실행)</a><br/>
+<a href="../etc/JRuler.exe">exe파일(down)</a><br/>
+<a href="../etc/jrulerpro.zip">zip파일(down)</a><br/>
+<a href="../etc/membersave.sql">sql파일(down)</a><br/>
+<a href="../etc/ppt1.ppt">ppt파일(down)</a><br/>
+<a href="../etc/test1.xlsx">xlsx 엑셀파일(down)</a><br/>
+<a href="../img/2.png">img파일(실행)</a><br/>
+<a href="../etc/aa.java" download>java파일(실행인데 다운로드 속성 걸었다.)</a><br/>
+<a href="../etc/bb.hwp" download>hwp파일(down.. 원래 다운로드 되는 파일인데 다운로드 또 걸어도 상관없다.))</a><br/>
+<hr>
+<a id="i1">HTML이란?</a><br/>
+Hyper Text Markup Language<br/> Hyper Text Markup Language<br/>Hyper Text Markup Language<br/>Hyper Text Markup Language<br/>Hyper Text Markup Language<br/>Hyper Text Markup Language<br/> Hyper Text Markup Language<br/>Hyper Text Markup Language<br/>Hyper Text Markup Language<br/>Hyper Text Markup Language<br/>
+<a id="i2">JAVASCRIPT란?</a><br/>
+동적 웹 프로그래밍<br/> 동적 웹 프로그래밍<br/> 동적 웹 프로그래밍<br/>동적 웹 프로그래밍<br/> 동적 웹 프로그래밍<br/> 동적 웹 프로그래밍<br/>동적 웹 프로그래밍<br/>동적 웹 프로그래밍<br/> 동적 웹 프로그래밍<br/> 동적 웹 프로그래밍<br/>동적 웹 프로그래밍<br/> 동적 웹 프로그래밍<br/> 동적 웹 프로그래밍<br/>동적 웹 프로그래밍<br/>
+<a id="i3">JSP란?</a><br/>
+Java Server Page<br/> Java Server Page<br/> Java Server Page<br/>Java Server Page<br/>Java Server Page<br/>Java Server Page<br/> Java Server Page<br/>Java Server Page<br/> Java Server Page<br/> Java Server Page<br/>Java Server Page<br/>Java Server Page<br/>Java Server Page<br/> Java Server Page<br/>
+<a id="i4">SPRING이란?</a><br/>
+Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/>Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/>Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/>Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/>Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/>Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/>Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/>Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/>Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/>Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/>Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/>Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/>Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/>Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/> Open framework<br/>
+<hr/>
+
+<a href="#top" id="bottom">맨위로</a>
+</body>
+</html>

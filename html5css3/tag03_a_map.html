@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Map을 이용한 링크 걸기</title>
+</head>
+<body>
+<h1>Map태그를 이용하여 여렆체이지로 링크걸기 </h1>
+<img src="../img/jeju_map.jpg" usemap="#jejuMap"/><!-- 아래 맵 네임 설정 후 요즈맵 여기 설정 #태그 붙이기 -->
+<p>
+정세균 국무총리는 수도권을 포함한 전국의 사회적 거리두기 기간 연장 방침을 밝혔습니다.
+정 총리는 오늘(4일) 정부서울청사에서 주재한 중앙재난안전대책본부(중대본) 회의에서 "오늘 수도권을 포함한 전국의 사회적 거리두기 연장과 방역수칙 조정방안을 논의한다"며 기간 연장 방침을 밝혔습니다.
+정 총리는 "최근 확진자가 다소 감소하는 모습이지만 확실한 안정세로 접어들지 못하고 있다"며 "성급하게 방역 조치를 완화해 위기를 초래하기보다는 확실한 반전 국면을 만들 때까지 총력을 다해야 한다"고 강조했습니다.
+정 총리는 "서민 경제의 어려움과 일상 생활의 불편을 생각하면 대단히 죄송스러운 마음이지만, 지금 고삐를 바짝 조여 확실한 감소세로 접어들어야만 더 큰 고통을 피할 수 있다"며 "국민 여러분들의 이해와 인내를 다시 한번 부탁드린다"고 말했습니다.
+</p>
+
+
+<map name="jejuMap">
+	<!--  사각형 모양으로 링크 걸기 
+		shape속성: rect(사각형), circle(원모양), poly(다각형)
+		coords속성: 좌표를 설정한다.
+		style="outline:none"마우스 눌렀을때 외곽 선 안잡히게하기
+		
+								x1, y2, x2, y2                    																				마우스 눌렀을때 외곽 선 안잡히게하기 -->
+	<area shape="rect" coords="250,130,330,180" href="https://www.airport.co.kr/jeju/main.do" target="_blank" title="제주공항홈페이지로 이동합니다." STYLE="OUTLINE:NONE"/>
+	<!-- 						x, y, r 														외부 사이트를 갈때는 새창에서 여는게 좋다. target		-->
+	<area shape="circle" coords="330,270,40" href="https://www.jeju.go.kr/hallasan/index.htm" target="_blank" title="한라산국립공원홈페이지로 이동합니다."/>
+	<!-- 					 	x, y, x, y, x, y 꼭지점의 수 만큼 계속 써나가면 된다. 한쪽방향으로  xy좌표를 순서대로표기-->
+	<area shape="poly" coords="70,210, 130,240, 70,290, 20,245" href="../index.html"/>
+	
+</map>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var imgTag = "<img src='../img/k1.jpg' id='book'/>";
+	document.write(imgTag);
+	
+	//document.는 body를 말함
+	
+	/*document.getElementById("test").innerHTML = imgTag;*/
+	//이렇게 하면 에러인게 위에서 아래로 내려오면서 실행하는데 위에서 test를 찾으려고 해도 아직 아래서 안만들어져서 찾을수가없음
+	
+</script>
+</head>
+<body>
+<br/>
+<input type="text" name="username" id="username" value="홍길동"/><br/>
+<div id="test" style="border:1px solid gray"></div>
+<script>
+	document.getElementById("test").innerHTML = imgTag; //div 안에 집어넣기
+	//이렇게 중간에 데이터를 넣는걸 DOM이라고 한다.
+	
+	/*HTML의 속성을 자바스크립트에서 사용할 수 있다.
+		자바스크립트에서 HTML속성 사용하기	*/
+	var name = document.getElementById("username");
+	//username에 이름을 변경
+	//document.getElementById("username").value = "hong gil dong";
+	username.value = "gil dong"; //위에꺼랑 같은의미
+	username.type = "password";
+	
+	var img = document.getElementById("book")
+	img.src="../img/K6.jpg"; //위에서 innerHTML로 넣은것은 안바뀐다.
+	
+	/*
+		자바스크립트에서 css사용하기
+	*/
+	img.style.border = "3px red solid";
+	
+	username.style.backgroundColor = "#abc"; //합성어일때는 HTML에서 쓰던 ' - '를 빼고 첫글자 대문자로 쓰면 된다 background-color => backgroundColor 
+	
+	img.title = "풍선도움말...";
+	
+</script>
+</body>
+</html>

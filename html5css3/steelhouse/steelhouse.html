@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body, ul{
+		margin:0;
+		padding:0;
+
+		list-style-type:none;
+	}
+	body{
+		background-color:rgb(146,204,101);
+	}
+	#left, #right{
+		float:left;
+		margin:0;
+		padding:0;
+	}
+	#main{
+		width:1325px;
+		height:1120px;
+		margin:10px auto;
+		background-color:#fff;
+	}
+	#left{
+		width:206px;
+	}
+	#top{
+		width:206px;
+		height:393px; /*이게 nav위치*/
+	}
+	#img1{
+		width:206px;
+	}
+	#right{
+		width:1050px;
+		height:1020px;
+		margin:0;
+		padding:0;
+	}
+	header>img{
+		width:210px;
+		height:394px;
+		margin:0;
+		padding:0;
+	}
+	#img2{
+		background-color:#fff;
+	}
+	#img2>img{
+		width:210px;
+
+		margin:0;
+		padding:0;
+	}
+	header{
+		margin:0;
+		padding:0;
+		background-color:rgb(99,187,39)
+	}
+
+	nav>ul>li{
+		padding:0;
+		margin:0;
+		font-family:맑은 고딕;
+		font-size:25px;
+		color:#fff;
+		float:left;
+		height:86px;
+		line-height:86px;
+		width:210px;
+		text-align:center;
+		background-color:rgb(99,187,39)
+	}
+	#left2{
+	float:left;
+		width:495px;
+		height:300px;
+		margin-right:30px;
+	} 
+	
+	#right2{
+	float:left;
+		width:495px;
+		height:300px;
+		margin-left:30px;
+	}
+	#bot{
+	 	width:1050px;
+	 	height:200px;
+	}
+	.img3{
+		width:495px;
+	}
+	#left2 li{
+		width:490px;
+		height:50px;
+		font-size:20px;
+		line-height:50px;
+
+		border:3px solid #bbb;
+		margin:10px 0px;
+	}
+	#right2>ul>img{
+		width:110px;
+		height:85px;
+	}
+	#right2 li{
+		width:110px;
+		height:110px;
+		text-align:center;
+		float:left;
+		margin:10px 6px;
+		color:rgb(168,168,168)
+		
+	}
+	#ab{
+		position:relative;
+		   width:400px;
+           height:83px;
+           left:200px;
+           bottom:60px;
+	}
+	a:link, a:visited, a:hover{text-decoration:none; color:gray;}
+</style>
+</head>
+<body>
+<div id="main">
+	<div id="left">
+		<div id="top"></div>
+		<img id="img1" src="img/css_gaon_08.jpg"/>
+	</div>
+	<div id="right">
+		<header>
+			<img src="img/css_gaon_02.jpg"/><img src="img/css_gaon_03.jpg"/><img src="img/css_gaon_04.jpg"/><img src="img/css_gaon_05.jpg"/><img src="img/css_gaon_06.jpg"/>
+			<nav>
+			<ul>
+				<li><b>COMPANY</b></li>
+				<li><b>STEELHOUSE</b></li>
+				<li><b>ARCHITECTURE</b></li>
+				<li><b>INTERIOR</b></li>
+				<li><b>COMUNITY</b></li>
+			</ul>
+			</nav>
+			<div id="img2">
+			<img src="img/css_gaon_15.jpg"/><img src="img/css_gaon_16.jpg"/><img src="img/css_gaon_17.jpg"/><img src="img/css_gaon_18.jpg"/><img src="img/css_gaon_19.jpg"/>
+			</div>
+		</header>
+			<section>
+		<div id="left2">
+			<img class="img3" src="img/css_gaon_22.jpg"/>
+			<ul>
+				<li>
+					<b>&nbsp;01.</b>&nbsp;<a href="#">자주하시는 질문</a>
+				</li>
+				<li>
+					<b>&nbsp;02.</b>&nbsp;<a href="#">질문과 답변</a>
+				</li>
+				<li>
+					<b>&nbsp;03.</b>&nbsp;<a href="#">채용 안내</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div id="right2">
+			<img class="img3" src="img/css_gaon_24.jpg"/>
+			<ul>
+				<li><a href="#"><img src="img/g1.png"/>멋진 인테리어</a></li>
+				<li><a href="#"><img src="img/g2.png"/>이쁜실내</a></li>
+				<li><a href="#"><img src="img/g3.png"/>아파트단지</a></li>
+				<li><a href="#"><img src="img/g2.png"/>회의실 내부</a></li>
+				<li><a href="#"><img src="img/g1.png"/>멋진 인테리어</a></li>
+				<li><a href="#"><img src="img/g2.png"/>이쁜실내</a></li>
+				<li><a href="#"><img src="img/g3.png"/>아파트단지</a></li>
+				<li><a href="#"><img src="img/g3.png"/>회의실 내부</a></li>
+			</ul>
+		</div>
+		<img id="bot" src="img/css_gaon_31.jpg"/>
+	</section>
+	</div>
+	<div id="ab"><img src="img/css_gaon_28.jpg"/></div>
+	
+</div>
+</body>
+</html>

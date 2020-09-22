@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#content{
+		width:1000px;
+		margin:0 auto;
+	}
+	#saverImg{
+		text-align:center;
+	}
+	#saverImg>img{
+		width:100px;
+		height:100px;
+		margin:1px;
+		border:1px solid gray;
+	}
+	#msg{
+		font-size:3em;
+		text-align:center;
+		display:none;
+		color:yellow;
+	}
+	#wing{
+		width:200px;
+		height:50px;
+		position:absolute;
+		left:0px;
+		top:0px;
+		display:none;
+		
+	}
+	
+</style>
+<script>
+	var imgName=['1.gif', 'flower.png', 'k1.jpg', 'K6.jpg', '2.png', '3.png', 'glass1.gif', 'jeju_map.jpg', 'wing.gif'];
+	function setSaverImage(){
+		var tag = "이미지를 클릭하시면 화면보호기가 설정됩니다.<br/>";
+		for(i=0; i<imgName.length; i++){
+			//tag += "<img src='../img/"+imgName[i]+"' onclick='startScreenSaver(\""+ imgName[i]+"\")'/>";
+			//위에꺼는 따옴표 사용이 헷갈리니까 더 간단하게 인덱스 넘기는 방법 밑에 추가
+			tag += "<img src='../img/"+imgName[i]+"' onclick='startScreenSaver("+i+")'/>";
+			//이거는 인덱스 위치를 불러오기때문에 더간단한데, 인덱스 불러오는게 안되는 상황이 생길때는 제일 위에 따옴표 쓰는걸 사용해야함
+		}
+	
+		document.getElementById("saverImg").innerHTML = tag;
+
+	}
+	var wWidth;
+	var wHeight;
+	var timer;
+	function startScreenSaver(selImg){
+		//현재컨텐츠 '숨김' ... 지워진게 아니다.
+		document.getElementById("content").style.display = "none";
+		//body태그 전체에 배경설정
+		/*document.getElementsByTagName("body")[0].style.backgroundImage="url(../img/"+imgName[selImg]+")";*/ 
+								//주의. s쓰는것 [0]은 0번째 body라는뜻
+		var body=document.getElementsByTagName("body")[0]
+		//body를 변수로 만들어서 붙여씀
+		body.style.backgroundImage="url(../img/"+imgName[selImg]+")";
+	
+		
+		wWidth = window.innerWidth; //창의 폭
+		wHeight = window.innerHeight; //창의 높이
+		body.style.backgroundSize = wWidth+"px "+wHeight+"px";//100px 200px
+		/*
+		console.log("asdawdawd"); //이렇게 쓰면 F12 눌러서 나오는 콘솔에 호출될때마다 찍힌다.
+		console.log(selImg); //이렇게 쓰면 F12 눌러서 나오는 콘솔에 호출될때마다 찍힌다.
+		*/
+		document.getElementById("msg").style.display="block";
+		document.getElementById("wing").style.display="block";
+		
+		timer = setInterval("wingMove()", 100);
+	}
+	var x=0, y=0, xStep=5, yStep=5;
+	
+	function wingMove(){
+		x += xStep;
+		y += yStep;
+		var w = document.getElementById("wing").style;
+		
+		w.left = x+"px";
+		w.top = y+"px";
+		
+		if(y >= wHeight-55){
+			yStep=-5;			
+		}
+		if(x >= wWidth-205){
+			xStep=-5;
+		}
+		if(y<=0){
+			yStep=+5;
+		}
+		if(x<=0){
+			xStep=+5;
+		}
+	}
+	
+	//화면보호기 종료
+	function cancelSaver(){
+		clearInterval(timer);
+		document.getElementsByTagName("body")[0].style.backgroundImage = "";
+		document.getElementById("msg").style.display="none";
+		document.getElementById("wing").style.display="none";
+		document.getElementById("content").style.display="block";
+		
+	}
+	
+</script>
+</head>
+<body onload="setSaverImage()" onkeyup="cancelSaver()"> <!-- onkeydown 키보드 누르거나 땠을때 이벤트 작동하게 하는것. 키보드이벤트 -->
+<!-- 컨텐츠 -->
+<div id="content">
+	<div id="saverImg"></div>
+	<div id="main">
+		<img src="../img/1.gif"/><br/>
+		<img src="../img/2.png"/><br/>
+		<img src="../img/3.png"/><br/>
+	</div>
+</div>
+<div id="msg">마우스를 클릭하시면 화면보호기가 종료됩니다.</div>
+<img src="../img/wing.gif" id="wing"/>
+</body>
+</html>

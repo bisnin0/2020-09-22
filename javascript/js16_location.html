@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	//location객체
+	document.write("location.protocol->"+location.protocol);//http, https
+	document.write("<br/>location.port->"+location.port); //port
+	document.write("<br/>location.hostname->"+location.hostname); //호스트네임
+	document.write("<br/>location.host->"+location.host);//localhost + port번호 같이 구해짐.. 위에 두개 합친것
+	
+	// location.href="https://www.nate.com";//특정페이지로 이동하기. 이거 많이쓰는방법임.
+	//location.href="imageSlide/movieSlideEX.html"; //오늘 만든 html파일로 이동
+	
+	//페이지 재실행
+	location.reload(); //재실행인데 무한루프
+</script>
+</body>
+</html>

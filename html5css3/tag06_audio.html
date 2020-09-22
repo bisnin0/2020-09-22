@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>음악파일</title>
+</head>
+<body>
+<!-- 
+	src : 파일명
+	autoplay : 자동재생(지금은 안된다고함)
+	controls : 컨트롤러를 표시 <-- 이걸 해야 재생버튼 생성되고 눌러서 재생가능
+	loop : 재생횟수 정해줌
+	
+
+
+-->
+<!-- 
+<audio src="../audio_video/Kalimba.mp3" controls> </audio>
+-->
+
+<audio controls loop="2"> <!-- loop는 몇번 반복할건지 정하는것 -->
+	<source src="../audio_video/Kalimba.mp3" type="audio/mp3"/>
+	<source src="../audio_video/Kalimba.ogg" type="audio/ogg"/>
+	<!-- 웹브라우저마다 다르니까 어떤게 작동할지 모르니까 둘 다 넣는것. -->
+</audio>
+<br/>
+<img src="../img/2.png" width="100"/>
+
+</body>
+</html>

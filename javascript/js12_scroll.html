@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function scrollMove(){
+		//절대위치로 이동          x, y
+		//window.scrollTo(0, 600); //스크롤 y좌표 600으로 이동.
+		
+		
+		//상대위치로 이동
+		window.scrollBy(0, 20); //현재 위치를 기준으로 y값에 10을 더함
+		
+	}
+</script>
+</head>
+<body>
+<button onclick="scrollMove();">스크롤바 이동</button>
+<script>
+	var img = ['1.gif', 'flower.png', 'k1.jpg', 'K6.jpg', 'jeju_map.jpg', 'glass1.gif','2.png'];
+	
+	for(i=0; i<img.length; i++){
+		document.write("<img src='../img/"+img[i]+"'/>")
+		if(i==1){
+			document.write("<button onclick='scrollMove();''>스크롤바 이동</button>");
+		}
+	}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img{
+		width:100px; 
+		height:100px;
+	} /*이미지 스타일을 정하고 자바스크립트로 반복문 가능*/
+</style>
+<script>
+	//주석문
+	/*
+		주석문
+	*/
+
+	
+	
+	//document.는 body를 말함
+	document.write("자바스크립트 영역에서 출력"); //바디에 뭔가를 출력하는 기능을 가진 모듈. write()
+	document.write("<img src=\"../img/K6.jpg\"/>");
+	document.write("<img src='../img/K6.jpg'/>"); //자바스크립트는 싱글따옴표 더블따옴표 구분하지 않는다.
+	document.write('<img src="../img/K6.jpg"/>'); //위를 많이 쓸듯?
+			
+	//자바에서 배운 반복문과 똑같이 반복문 쓸 수 있다.
+	//int, String같이 정의할필요없이 쓴대로 데이터형이 정해진다.
+	var i=10;  //i는 정수형이된다.
+	var ii="홍길동"; //ii는 문자형이 된다.
+	for(i=1;i<=10;i++){
+		document.write('<img src="../img/K6.jpg"/>');
+		
+	}
+</script>
+
+</head>
+<body>
+
+<img src="../img/k1.jpg"/>
+<script>
+	document.write("두번쨰 스크립트 실행...");
+</script>
+</body>
+</html>

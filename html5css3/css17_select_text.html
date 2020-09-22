@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+		텍스트 스타일
+		::first-letter -> 문단의 첫번째 문자에 스타일적용
+		::first-line   -> 첫번째 줄에 스타일 적용
+		::selection    -> 선택영역에 대한 스타일 적용
+		
+	*/
+	#txt::first-letter{
+		font-size:25px;
+		color:red;
+		font-weight:bold;
+		background-color:#ddd;
+	}
+	#txt::first-line{
+		background-color:lightblue;
+		font-family:궁서체;
+		color:yellow;
+	}
+	#txt::selection{/*드래그*/
+		color:#0f0;
+		background:#000;
+		
+	}
+	/*
+		부성전선택자
+			not() : -> 선택자를 제외한 나머지를 스타일적용 
+	
+	*/
+	#aa>input:not([type=submit]){ /*input에서 type속성이 submit이 아닌것에 스타일적용*/
+		background:green;
+	}
+</style>
+</head>
+<!-- 
+	복사금지 설정
+	oncontextmenu : 마우스 오른쪽 버튼 메뉴 제어
+	onselectstart : 선택시작불가능
+	
+	ondragstart : 드래그 시작 불가능
+	ondragend : 드래그 종료 불가능
+ -->
+<body oncontextmenu="return false" onselectstart="return false">
+
+<div id="aa">
+	<input type="text" name="a1"/><br/>
+	<input type="text" name="a2"/><br/>
+	<input type="password" name="a3"/><br/>
+	<input type="text" name="a4"/><br/>
+	<input type="submit" name="a5" value="클릭"/><br/>
+</div>
+<div id="txt">
+방역당국은 수도권의 ‘사회적 거리두기’ 2.5단계 방역 조치 시행 이후 인파가 몰리는 한강공원의 상황에 대해 아직 코로나19 발병 사례는 없지만, 마스크를 제대로 착용하지 않으면 위험할 수 있다고 경고했다.
+
+권준욱 중앙방역대책본부 부본부장은 8일 정례 브리핑에서 “현재까지 한강공원 내 감염이나 추가 감염전파에 관해 확인된 사례는 없다”고 밝혔다.
+
+이어 “실외에서도 거리두기를 지키기 어렵거나 비말(침방울)이 전파될 수 있는 거리 안에서 마스크 착용 없이 장시간 노출되는 환경이라면 감염 위험도를 최소한 중위험 이상으로 판단한다. 한강공원 내 편의점 등 실내시설이나 거리두기를 지키기 어려운 실외에서도 마스크 착용을 권장하고 있다”고 말했다.
+
+최근 수도권의 거리두기 2.5단계 격상으로 오후 9시 이후 술집과 음식점 내 취식이 금지되자 젊은 층을 중심으로 한강공원 노상에서 음식을 먹거나 음주를 하는 사례가 부쩍 많아졌다.
+
+서울시는 이날 오후 2시부터 여의도·뚝섬·반포 등 주요 한강공원 내 밀집 지역에 대한 시민들의 출입을 통제하고, 11개 한강공원 내 43개 주차장도 오후 9시부터 다음날 오전 2시까지 진입할 수 없도록 조치했다.
+
+</div>
+</body>
+</html>

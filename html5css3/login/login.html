@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		margin:0px;
+		background-color:#ececee;
+	}
+	#main{
+		width:700px;
+		height:100vh;
+		margin:0px auto;
+		padding:0px;
+		background-color:#fff;
+	}
+	#daum{
+		float:center;
+		width:100px;
+		margin:0px auto;
+		padding: 15px;
+	}
+	#center{
+		height:385px;
+		border-width:1px;
+		border-top-style:solid;
+		border-bottom-style:solid;
+		border-color:#e6e6e6;
+	}
+	input[type=text] {
+ 		padding: 15px;
+		
+		font-weight:bold;
+		font-size:15px;
+	}
+	#tb{
+		height:50px;
+
+	}
+	#aaa{
+		position:absolute;
+		width:700px;
+		height:300px;
+	}
+	#lcenter{
+		padding:20px;
+		width:270px;
+		margin:0px auto;
+	}
+	#left{
+		height:280px;
+		width:350px;
+	}
+	#right{
+		position:absolute;
+		left:350px;
+		height:280px;
+		width:350px;
+		top:0px;
+	}
+	img[src$=jpg]{
+		padding:15px;
+	 	width:90%;
+	 	height:90%;
+	}
+	input[name=login]{
+		padding: 15px;
+		width:265px;
+		font-weight:bold;
+		font-size:15px;
+	}
+	input[type=submit]{
+		background-color:#4f82ec;
+		color:white;
+		border-style:none;
+	}
+	#bot1{
+		font-size:12px;
+		width:265px;
+		height:50px;
+	}
+	#bot2{
+		padding:0px;
+		font-size:12px;
+		width:200px;
+		height:50px;
+		margin:0px auto;
+	}
+	ul{
+		list-style:none;
+	    margin:0px;
+	    padding:0px;
+	}
+	li{
+		margin:0px;
+    	padding-left:15px;
+   		border:0;
+   	 	float:left;
+	}
+	ul>li:nth-child(2n){
+		color:rgb(212,212,220);
+    	font-weight:bold;
+    }
+   	.li1{
+		font-weight:bold;
+
+    }
+   	#bot3{
+		padding:15px;
+		font-size:12px;
+		width:200px;
+		height:50px;
+		margin:0px auto;
+	}
+	a:link{
+		text-decoration:none;
+		color:gray;
+	}
+	a:visited{
+		color:#000;
+		text-decoration:none;
+		font-weight:bold
+	}
+	a:hover{text-decoration:underline}
+
+	/*오른쪽 이미지 넣는거 */
+</style>
+
+</head>
+<body>
+
+<div id="main">
+	<div id="daum"><a href="http://www.daum.net"><img src="img/daum.png"/></a></div>
+	<div id="center">
+		<div id="tb"></div>
+			<div id="aaa">
+				<div id="left">
+					<div id="lcenter">
+						<input style=margin-bottom:5px type="text" name="userid" size="25" placeholder="아이디 입력"/>
+						<input style=margin-bottom:15px type="text" name="password" size="25" placeholder="비밀번호 입력"/>
+						<input style=margin-bottom:10px type="submit" name="login" value="로그인"/><br/>
+						<div id="bot1">
+							<span style=float:left >
+							<input type="checkbox" name="interest" value="쇼핑"/>로그인 상태 유지
+							</span>
+							<span style=float:right>
+							<a href="https://logins.daum.net/accounts/loginform/popup/ipsecuritysettingform.do" target="_blank" style=text-decoration:none>IP보안</a>
+							<span style=color:blue>ON</span>
+							
+							</span>
+						</div>
+						<div id="bot2">
+							<ul>
+								<li class="li1"><a href="https://member.daum.net/find/id.do?action=home" target="_blank" >아이디 찾기</a></li>
+								<li>|</li>
+								<li class="li1"><a href="https://member.daum.net/find/password.do?action=daumid-check" target="_blank" >비밀번호 찾기</a></li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+				<div id="right"><a href="http://www.daum.net"><img src="img/k1.jpg"/></a></div>
+			</div>
+			
+
+	</div>
+	<div id="bot3">
+		<ul>
+			<li><a href="https://www.kakaocorp.com/" target="_blank" >© Kakao Corp.</a></li>
+			<li>|</li>
+			<li><a href="https://cs.daum.net/faq/59/14970.html" target="_blank" >고객센터</a></li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>

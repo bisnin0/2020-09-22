@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width:500px;
+		border:1px solid gray;
+		background-color:lightblue;
+		margin:20px;
+	}
+	
+	.txt1{ /*한줄로 줄바꿈없이 */
+		white-space:nowrap; /*줄을 바꾸지 않음*/
+		overflow:hidden;
+		text-overflow:ellipsis; /*줄임표시 ... 를 표시*/	
+	}
+	
+	.txt2{
+		height:75px; /*보여지는 행의 수와 똑같은 갯수로 들어가게끔. line-height를 보고 계산*/
+		line-height:25px; /*한 행의 높이*/
+		-webkit-line-clamp:3; /*3행으로 줄일거다는것. 위에높이와 행높이와 이것 3가지가 상호작용하게끔 설정 */
+		display:-webkit-box;
+		overflow:hidden; /*이거 없어도 적용 되는거같은데?*/
+		text-overflow:ellipsis;
+		-webkit-box-orient:vertical;
+	}
+
+</style>
+
+</head>
+<body>
+	<div class="txt1">
+	인도 발리우드의 유명 여배우 레아 차크라보티(28)가 마약을 구입한 혐의로 인도 마약 단속 당국에 체포됐다고 9일(현지 시각) 인도 NDTV와 영국 BBC 등이 보도했다. 레아는 지난 6월 사망한 남자친구이자 ‘발리우드의 흙수저 신화’였던 톱 배우 서샨트 싱 라즈풋에게 마약을 구입해 줬다는 혐의를 받고 있다. 마약 당국은 그녀가 마약 조직의 핵심 조직원이었다고 밝혔다. 하지만 레아는 혐의를 전면 부인하고 있다.
+	갑작스러운 서샨트의 죽음을 둘러싸고 각종 의혹과 음모론이 잇따라 제기된 상황에서 레아의 마약 조직 연루 의혹이 나오면서 인도 사회가 또다시 충격에 빠졌다.
+	</div>
+	<div class="txt2">
+	인도 발리우드의 유명 여배우 레아 차크라보티(28)가 마약을 구입한 혐의로 인도 마약 단속 당국에 체포됐다고 9일(현지 시각) 인도 NDTV와 영국 BBC 등이 보도했다. 레아는 지난 6월 사망한 남자친구이자 ‘발리우드의 흙수저 신화’였던 톱 배우 서샨트 싱 라즈풋에게 마약을 구입해 줬다는 혐의를 받고 있다. 마약 당국은 그녀가 마약 조직의 핵심 조직원이었다고 밝혔다. 하지만 레아는 혐의를 전면 부인하고 있다.
+	갑작스러운 서샨트의 죽음을 둘러싸고 각종 의혹과 음모론이 잇따라 제기된 상황에서 레아의 마약 조직 연루 의혹이 나오면서 인도 사회가 또다시 충격에 빠졌다.
+	</div>
+</body>
+</html>

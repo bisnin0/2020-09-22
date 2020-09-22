@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#view{
+		position:absolute;
+		width:500px;
+		height:500px;
+		left:200px;
+		top:100px;
+		border:1px solid #ddd;
+		z-index:10;
+	}
+	#view>img{
+		width:500px;
+		height:500px;
+	}
+
+	#view2{
+		position:absolute;
+		width:400px;
+		height:80px;
+		left:250px;
+		top:120px;
+		border:1px solid #ddd;
+		z-index:20;
+		background-color:#fff;
+		line-height:80px;
+		text-align:center;
+		font-size:30px;
+	}
+
+	#view3{
+		position:absolute;
+		width:400px;
+		height:370px;
+		left:250px;
+		top:220px;
+		border:1px solid #ddd;
+		z-index:20;
+		background-color:#fff;
+	
+		font-size:20px;
+		line-height:45px;
+	}
+</style>
+<script>
+	var img = ['1.gif', 'flower.png', 'k1.jpg', 'K6.jpg', '2.png', '3.png', 'glass1.gif'];
+	var i=0;
+	
+	function changeImage(){
+		document.getElementById("view").innerHTML="<img src='../img/"+img[i++]+"'/>";
+		if(img.length<=i) i=0;
+	}
+	
+	function getDateTime(){
+		var date = new Date();
+		var dateTxt = date.getFullYear()+"년";
+		dateTxt += date.getMonth()+1+"월"; //월이라 +1해줘야한다.
+		dateTxt += date.getDate()+"일";
+		var weekTxt="";
+		switch(date.getDay()){
+		case 0: weekTxt="일";break;
+		case 1: weekTxt="월";break;
+		case 2: weekTxt="화";break;
+		case 3: weekTxt="수";break;
+		case 4: weekTxt="목";break;
+		case 5: weekTxt="금";break;
+		case 6: weekTxt="토";break;
+		}
+		dateTxt += "("+weekTxt+")";
+		dateTxt += date.getHours()+"시";
+		dateTxt += date.getMinutes()+"분";
+		document.getElementById("view2").innerHTML= dateTxt;
+	}
+	
+	function getCalendar(){
+		var date = new Date();
+		var year = date.getFullYear();
+		var month = date.getMonth()+1;
+		var empty = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		var empty2 = "&nbsp;&nbsp;";
+		var calendar =empty+empty+empty+empty+"<b>"+year+"년 "+month+"월"+"</b><br/>";
+		calendar += empty2+"일"+empty+"월"+empty+"화"+empty+"수"+empty+"목"+empty+"금"+empty+"토<br/>";
+		var date2 = new Date(year,month-1,1); 
+		var date3 = new Date(year,month-1,0);
+		var firstDay = date2.getDay();
+		var prelastDay = date3.getDate();
+		var lastDay;
+		if(prelastDay==31){
+			lastDay=30;
+		}else{
+			lastDay=31;
+		}
+		
+		var allDay = firstDay+lastDay;
+		var day = new Array();
+		for(i=1; i<=firstDay; i++){
+			day[i]=empty2+"&nbsp;";
+		}
+		var day2 = 1;
+		for(i=firstDay+1; i<=allDay; i++){
+			day[i]=	day2;
+			day2+=1;
+		}  
+		var next=1;
+		for(i=1; i<=allDay; i++){
+			if(next==1){
+				calendar+=empty2
+			}
+			if(day[i]<10){
+				if(day[i]%2==0){
+					calendar += day[i]+empty+empty2;	
+				}else{
+					calendar += day[i]+empty+"&nbsp;";
+				}
+				
+			}else{
+				
+				calendar += day[i]+empty;
+			}
+
+			next+=1;
+			if(next==8){
+				calendar+="<br/>";
+				next=1;
+			}
+		}
+	
+		
+		document.getElementById("view3").innerHTML= calendar;
+
+	}
+	
+</script>
+</head>
+<body onload="setInterval('changeImage()', 1000); setInterval('getDateTime()', 1000); getCalendar();">
+<div id='view'></div>
+<div id='view2'></div>
+<div id='view3'></div>
+</body>
+</html>

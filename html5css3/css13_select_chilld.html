@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*자손 선택자*/
+	#mainDiv>ul{background-color:lightblue}/*li로 하면 안되는게 maindiv바로 아래 있는건 ul이랑 h2뿐이라서.*/
+	/*후손 선택자*/
+	#mainDiv b{background-color:green}
+	/*반응 선택자 hover*/
+	#subDiv li:hover{/*subDiv에 li중에 마우스 오버가 일어나면 이걸 선택해라.*/
+		background-color:pink;
+	}
+	#subDiv li:active{/*마우스 누르고 있을때*/
+		color:blue;
+	}
+</style>
+</head>
+<body>
+<h1> 자손선택자, 후손선택자</h1>
+<div id="mainDiv">
+	<ul>
+		<li>자손, 후손선택자11111</li>
+		<li>자손, 후손선택자22222</li>
+		<li>자손, 후손선택자33333
+			<b>후손선택자</b>
+		
+		</li>
+		<li>자손, 후손선택자44444</li>
+		<li>자손, 후손선택자55555</li>
+	</ul>
+	<h2>222222222222222</h2>
+</div>
+<h1> 자손선택자, 후손선택자</h1>
+<div id="subDiv">
+	<ul>
+		<li>자손, 후손선택자11111</li>
+		<li>자손, 후손선택자22222</li>
+		<li>자손, 후손선택자33333</li>
+		<li>자손, 후손선택자44444</li>
+		<li>자손, 후손선택자55555</li>
+	</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+	테이블 만들기
+	table태그 : 표의 범위
+	tr태그 : 줄을 생성
+	td태그 : 칸을 생성
+	th태그 : title로 설정하고싶은 칸을 생성해준다.(진하게, 가운데정렬)
+	caption태그 :표의 상단에 제목을 표시해준다.
+	
+	thead
+	tbody
+	tfoot
+	
+	속성
+	width : px(픽셀), % 
+	height : px
+	cellspacing, cellpadding, background, bgcolor.....
+ -->
+ 
+ <table border="1" width="800"> <!-- 넣었었음 900픽셀, 혹은 백분율 -->
+ 	<caption style="font-size:25px; color:blue"><b>시간표</b></caption>
+ 	<colgroup>
+ 		<col span="2" style="background-image:url(../img/3.png)"/> <!-- 여기서 span="2"는 퀄럼을 2칸 같이 적용하라는뜻.. 여러개를 동시지정이란의미 --> 
+ 		<!-- 퀄럼.. 열을 말한다. 하나에 한 열 .-->
+ 		<col style="background:#dddddd"/>
+ 	</colgroup>
+ 	<!-- 첫번째 줄 -->
+ 	<thead>
+ 	<tr> <!-- tr에는 폭 적용이 안된다? -->
+ 		<!-- 칸생성 -->
+ 		<th width="300">첫번째</th>
+ 		<td><img src="../img/3.png" width="100"/></td>
+ 		<td width="300">세번째</td>
+ 	</tr>
+ 	</thead>
+ 	<tbody>
+ 	<!-- 두번째 줄 -->
+ 	<tr height="300"> <!-- style="background:yellow" 넣으면 두번째칸 노란색 -->
+ 		<td>AAAAAAAAAA</td>
+ 		<td style="background:pink">BBBBBBBBBB	<span style="font-weight:bold">ggggggggggggg</span> ddddddddddd</td>
+ 		<!-- 중간에 내용에 변화를 줄때는 span으로 범위를 먼저 잡아준다. span은 아무런 기능이 없는게 특성. 그냥 <span> </span>까지 한 블럭이라는 설정 -->
+ 		<td>CCCCCCCCCC<br/>
+ 			<table border="1" width="100%">
+ 				<tr>
+ 					<td>111</td>
+ 					<td>222</td>
+ 				</tr>
+ 				<tr>
+ 					<td>333</td>
+ 					<td>444</td>
+ 				</tr>	
+ 			
+ 			</table>
+ 		</td>
+ 	</tr>	
+ 	</tbody>	
+ </table>
+</body>
+</html>

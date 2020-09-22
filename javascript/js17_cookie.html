@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function winOpen(){
+		//쿠키 존재여부 확인후 팝업창을 띄운다.
+		//팝업창 띄우기
+		var cookie=document.cookie;
+		//console.log(cookie); 콘솔에서 쿠기 확인하기
+		if(cookie.indexOf("notice")){ //없으면 -1, 있으면 index가 돌아온다.
+			window.open("popup.html","m","width=400, height=400");
+		}//쿠기가 없을때 이 창을 띄워야한다. 쿠키는 오늘 안보기 체크 후 닫기 버튼 누르면 기록되니까
+		//쿠키가 있으면 창이 안뜬다.
+		
+			
+		
+	}
+</script>
+</head>
+<body onload="winOpen();">
+<h1>Cookie테스트</h1>
+cookie는 client컴퓨터에 필요한 데이터를 기록하는 기능이다.
+
+</body>
+</html>

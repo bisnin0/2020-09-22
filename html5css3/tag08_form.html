@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<!-- 폼태그 : 서버로 사용자가 입력한 데이터를 가져갈수 있다... 가져가는것은 JSP가 한다. html은 가져갈수있도록 준비해주는것까지-->
+<!-- action: 폼이 submit발생하면 호출하는 파일명을 명시한다.
+
+		전송방식
+		GET 방식 : 주소표시줄에 데이터가 표시되는것
+		POST 방식 : 데이터를 숨겨서 전송하는것
+
+		size= 적은 숫자만큼 박스 크기 늘려준다.
+		maxlength = 지정된 값만큼만 입력 가능하게 만든다.(10적으면 10글자같은식)
+		placeholder= 폼 안에 배경처럼 회색 글자를 집어넣음. 문자 입력하면 사라짐(value가 있으면 안뜸)
+		파일업로드시 form태그 반드시 type="multipart/form-data"
+ -->
+
+<form method="post" action="login.jsp" type="multipart/form-data"> <!-- type="multipart/form-data없으면 파일업로드 안된다. -->
+	아이디 : <input type="text" name="userid" value="abcd" size="20" maxlength="10" placeholder="아이디 or 이메일"/><br/> <!-- 한줄의 문자를 입력 -->
+	비밀번호 : <input type="password" name="userpwd"/> <br/>
+	파일첨부 : <input type="file" name="filename"/><br/>
+	<!-- 파일 업로드할때 필요한 코드. file ... name은 변수.. = 이후는 변수이름(자바 변수 이름과 같음)-->
+	체크박스 : <input type="checkbox" name="hobby" value="여행"/>여행
+	<!-- 체크박스에는 name과 value는 무조건 있어야한다. -->
+	<!-- 체크박스를 딱 누르면 서버로 value로 쓴 "여행"이 간다. -->
+			<input type="checkbox" name="hobby" value="등산" checked/>등산
+			<!-- checked 창이 열렸을때 이미 체크 되어있다. -->
+			<input type="checkbox" name=hobby" value="쇼핑"/>쇼핑<br/>
+	라디오버튼 : <input type="radio" name="gender" value="M" checked/>남자
+			 <input type="radio" name="gender" value="F"/>여자<br/>		
+	<!-- 같은 name의 버튼중에  하나만 선택 가능하게끔 만든 버튼-->	
+	<!-- 체크한 버튼의 value가 서버로 넘어간다.  -->
+	<!-- 창이 열렸을때 이미 버튼이 선택된 상태를 원하면 checked를 쓴다. -->	 
+			<br/>
+	여러줄의 텍스트 입력 :<br/>
+	<textarea cols="50" rows="5" name="content">텍스트 박스의 데이터는</textarea><br/>		
+	<!-- 한줄에 입력할 수 있는 글자수 cols .. rows는 몇줄정도 라고 설정하는것-->		
+	<select name="book" size="3" multiple> <!-- 자바의 콤보박스 생각하면되는듯.. size=한번에 설정한 숫자만큼 내용 볼 수 있게 -->
+							<!-- multiple을 쓰면 다중선택이 가능해진다.. 드래그하거나 ctrl눌러서 -->
+		<option value="java">자바</option>
+		<option value="spring">스프링</option>
+		<option value="mybartis">마이바티스</option>
+		<option value="jsp" selected>제이에스피</option> <!-- 제이에스피가 선택된 상태로 보임. selected -->
+		<option value="html">HTML</option>
+	</select><br/>		
+	라벨이있는 select :
+	<select name="schedule">
+		<optgroup label="프론트앤드">	
+			<option value="html/css">html5/css3</option>
+			<option value="javascript">자바스크립트</option>
+			<option value="jquery">제이쿼리</option>
+		</optgroup>
+		<optgroup label="백앤드">	
+			<option value="java">자바</option>
+			<option value="jsp">제이에스피</option>
+			<option value="spring">스프링</option>
+		</optgroup>	
+	</select><br/>
+	<!-- 웹표준 되면서 새로 나온 속성 -->
+	date : <input type="date" name="date1"/><br/> <!-- 달력 삽입.. 화면에 보이는 달력날이 서버로간다. -->
+	datetime-local : <input type="datetime-local" name="date2"/><br/>
+			<!-- 몇월며칠 시분초.. .크롬에서 제대로 안나오는듯? 엣지에선 잘나옴 -->
+	month : <input type="month" name="date3"/><br/>
+	week : <input type="week" name="week"/><br/>	
+	color : <input type="color" name="color" id="color"/><br/>	
+	number : <input type="number" name="num" step="10"/><br/>
+			<!-- 								한번에 10씩 증가 감소 -->
+	range : <input type="range" name="range" id="range" min="1" max="10"/><br/>
+	
+	<input type="submit" value="로그인"/>
+	<!-- sublit과 같은 기능을 하는것 image -->
+	<input type="image" src="../img/K6.jpg"/>
+	<input type="button" value="코드값 출력" onclick="colorCode()"/>
+	 <!-- onclick=자바의 actionEvent랑 같은것 -->
+	<input type="reset" value="다시쓰기"/>
+</form>
+
+<script>
+	//javascrpit영역 	#b15959
+	function colorCode(){
+		alert(document.getElementById("color").value +"/n"+ document.getElementById("range").value);
+		//alert:대화상자.. ex)아이디를 입력해주세요.
+		//코드값출력 버튼을 눌렀을때 위에 color에 설정한 아이디 color를 찾아서 선택된 value(값)을 value에 담아서 메시지창에 띄워준다.   
+	}
+</script>
+
+
+</body>
+</html>

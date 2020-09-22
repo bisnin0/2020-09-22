@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 너무많이 못함. 나중에 풀이보고 다시만들어보기 -->
+<style>
+
+	body{
+		padding:0;
+		margin:0;
+		background-size:100% 100%;
+	}
+	#top{
+		width:1000px;
+		height:150px;
+		margin:0 auto;
+		border:1px solid gray;
+		padding:0;
+	}
+	#bot{
+		width:1000px;
+		height:1500px;
+		margin:0 auto;
+		border:1px solid gray;
+		pdding:0;
+		overflow:hidden;
+	}
+	#bot>div{
+		
+		width: 700px;
+		margin:20px auto;
+	}
+	#bot img{
+		width:700px;
+	}
+	#text{
+		text-align:center;
+		font-size:15px;
+		line-height:25px;
+		margin:0;
+		padding:0;
+	}
+	#img1{
+		width:881px;
+		height:120px;
+		margin:0 auto;
+		padding:0;
+		border:1px solid gray;
+	}
+
+	
+	#img1>img{
+		width:109px;
+		padding:0px;
+		margin:0px;
+		height:120px;
+		border-width:1px;
+		border-left-style:solid;
+	}
+
+</style>
+<script>
+	/*var idx=0;
+	var imgLst = ['1.gif', 'flower.png', 'k1.jpg', 'K6.jpg', '2.png', '3.png', 'glass1.gif', 'jeju_map.jpg'];
+	function setImage(){
+		var image;
+		for(i=1; i<=8; i++){
+			image += "<div id='"+i+"' src='../img/"+imgLst[idx++]+"'/>";
+			if(idx>=imgLst.length){
+				idx=0;
+			}
+		}
+		document.getElementById("img1").innerHTML=image;
+		
+	}
+	*/
+	function cI(id){
+		document.write("<div id='dd' style='position:relative;'><div style='z-index:10; font-size:2em; position:absolute; left:40%; color:yellow;'>아무키나 누르면 화면보호기가 종료됩니다.</div><img onClick='window.location.reload()' src="+id+" style='z-index:5; margin:0; padding:0; width:100%; height:98vh;'/></div>")
+		
+
+		//document.write("<h1 style='z-index:10; position:absolute; color:yellow;'>아무키나 누르면 화면보호기가 종료됩니다.</h1>")
+		//document.write("<img onClick='window.location.reload()' src="+id+" style='z-index:5; margin:0; padding:0; width:100%;	height:98vh;'/>");
+	}
+	
+	function move(){
+		var win = "<img src='../img/wing.gif'/>"
+		document.getElementById("dd").innerHTML= win;
+		
+		
+	}
+	
+	
+</script>
+</head>
+<body>
+<div id="top">
+	<div id="text">이미지를 클릭하시면 화면보호기가 실행됩니다.</div>
+		
+	<div id="img1">
+		<img onclick="cI('../img/1.gif')" id="i1" src="../img/1.gif" /><img onclick="cI('../img/flower.png')" id="i2" src="../img/flower.png"/><img onclick="cI('../img/k1.jpg')" id="i3" src="../img/k1.jpg"/><img onclick="cI('../img/K6.jpg')" id="i4" src="../img/K6.jpg"/><img onclick="cI('../img/2.png')" id="i5" src="../img/2.png"/><img onclick="cI('../img/3.png')" id="i6" src="../img/3.png"/><img onclick="cI('../img/glass1.gif')" id="i7" src="../img/glass1.gif"/><img onclick="cI('../img/jeju_map.jpg')" id="i8" src="../img/jeju_map.jpg"/>
+	</div>
+</div>
+<div id="bot">
+	<div> 
+		<img src="../img/1.gif"/>
+		<img src="../img/2.png"/>
+	</div>
+</div>
+</body>
+</html>

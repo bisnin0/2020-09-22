@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	//JSON : JavaScript Object Notation이다.
+	// JSON변수 설정
+	var data = { //이렇게 중괄호를 열면 JSON형식이다... 내용물은 하나의 객체로 보면 된다. Object니까.
+			username:"hong",
+			tel:"010-7896-9999",
+			addr:"서울시 마포구",
+			email:{
+					first_email:"goguma777@nate.com",
+					second_email:"goguma7day@naver.com"
+			}//email은 데이터를 두개 가지고 있는것.
+			
+	}; 
+	
+	document.write("username=" + data.username+"<br/>");
+	document.write("addr=" + data.addr + "<br/>");
+	document.write("email=" + data.email+"<br/>"); //이렇게 쓰면 내용은 안보임
+	document.write("first_email="+data.email.first_email+"<br/>"); //이렇게 경로를 쭉 적어줘야 한다.
+	
+</script>
+
+
+</body>
+</html>

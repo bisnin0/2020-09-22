@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	#div1, #div2{
+		background-color:lightblue; 
+		padding:50px;
+		margin:10px;
+	}
+	#div1>h1, #div2>h1{
+		background-color:yellow;
+		padding:50px;
+	}
+	#div1 i, #div i{
+		background-color:pink;
+		padding:30px;
+	}
+	
+	img{
+		width:100px;
+		height:100px;
+	}
+	input[type=image]{
+		width:100px;
+		height:50px;
+	}
+	
+	
+
+</style>
+
+
+<script>
+	document.title = "자바스크립트 이벤트";
+	/*
+	자바스크립트 이벤트(event) 종류
+	onclick : 마우스를 클릭했을때 발생
+	
+	onmouseover : 객체에 마우스가 들어가면 발생 (객체 내부에 다른 객체가 있으면 그 객체에 올라갈때마다 이벤트 발생)
+	onmouseout : 객체에서 마우스가 벗어나면 발생 (객체 내부에 다른 객체가 있으면 그 객체에 올라갈때마다 이벤트 발생)
+	
+	onmouseenter : 객체의 영역에 마우스가 들어가면 (위와 다르게 하위객체에서 이벤트가 발생하지 않는다.)
+	onmouseleave : 객체의 영역에서 마우스가 벗어나면 (위와 다르게 하위객체에서 이벤트가 발생하지 않는다.)
+	상황에 따라 다르지만 보통 위 두개를 쓰는게 over와 out보다는 좋다.
+	
+	onmousedown : 마우스를 누르고있을때 (누르자마자)
+	onmouseup : 마우스를 누른후 때면
+	onmousemove : 마우스를 움직이면
+	
+	onfocus : 커서가 요소에 들어오면(클릭하면)
+	onblur : 커서가 요소를 벗어나면(다른곳클릭하면)
+	
+	onsubmit: 폼에서 submit이 발생하면 이 영역으로 이동 <--이거 자주쓴다.
+	onreset : 폼에서 reset이 발생하면 이 영역으로 이동
+	
+	onkeydown : 키를 누른상태
+	onkeyup : 키를 누른후 놓으면
+	onkeypress : 키를 누른상태
+	onkeyrelease : 키를 누른후 놓으면
+	
+	onchange : value의 값을 변경 후 커서가 요소를 벗어나면 이벤트가 발생한다.
+	
+	onresize : 창의 크기가 조정되면 발생.
+	
+	onload: body가 로딩이 끝나면 이벤트발생
+	onunload: body가 종료시 이벤트 발생 .. 요즘엔 안먹힌다고?
+	*/
+	var cnt=0, cnt2=0;
+	
+	function getMouseoverEvent(){
+		document.getElementById("view").innerHTML = "mouseover 이벤트 발생 ->" + ++cnt +"번째";
+		
+	}
+	function getMouseoutEvent(){
+		document.getElementById("view2").innerHTML = "mouseout 이벤트 발생 ->" + ++cnt2 +"번째";		
+	}
+
+	//로그인을 위한 아이디와 비밀번호 입력유무확인
+	function logChk(){
+		//아이디
+		// document.getElementById("userid").value  -> 현재 doccument.에있는 userid의  value ==akdrh 
+		//						 inpout태그name
+		//			폼name
+		// document.logFrm.userid.value  -> 이것도 위와 마찬가지
+		if(document.getElementById("userid").value==""){ //아이디가 입력되지 않은 경우
+			alert("아이디를 입력하세요..");
+			document.getElementById("userid").focus();
+			return false;
+			
+		}
+		//비밀번호
+		if(document.getElementById("userpwd").value==""){//비밀번호를 입력하지 않은 경우
+			alert("비밀번호를 입력하세요..");
+			document.getElementById("userpwd").focus();
+			return false;
+		}
+		//아이디와 비밀번호가 있을경우 submit을 발생시킨다. 자바스크립트에서
+		return true;
+	}
+	
+	function loginCheck(){
+		if(document.logFrm.userid.value==""){ //두가지 방법중 아래것 사용해봄.. 보통 위에거를 많이씀
+			alert("아이디가 없어요....");
+			return;//현재함수 실행종료
+		}
+		if(document.logFrm.userpwd.value==""){
+			alert("비밀번호가 없어요....")
+			return;
+		}
+		//아이디와 비밀번호가 있을경우 submit을 발생시킨다. 자바스크립트에서
+		document.getElementById("logFrm").submit(); //logFrm에 서브밑이 발생하면 자동으로 action="loginOk.jsp"가 발생. 이건 아래 form태그에 있다.
+		//					이건 form태그의 ID를 말하는것
+		//document.lofFrm.submit(); //위와 같다.
+		//		이건 form 태그의 name을 말하는것
+	}
+	function chkReset(){
+		alert("reset이벤트가 발생하였습니다.....");
+		
+	}
+	function onlyNum(){
+		// event 내장객체
+		// keyCode : 방금입력한 키의 아스키코드를 구한다.
+		// console.log(event.keyCode);
+		
+		// returnValue :  true->보임, false->안보임	 .. 입력이 되고 안되고의 차이다. 
+		var key = event.keyCode;
+		if((key<48 || key>57)&& key!=8 && key!=46){ //참일때는 입력한 문자가 숫자가 아닌경우다. 백스페이스(8)와delete (46)
+			event.returnValue = false; //숫자가 아닌 문자는 아예 입력이 안된다.
+			
+		}else{ //숫자인경우
+			event.returnValue = true; //숫자인경우만 입력이 된다.
+			
+		}
+	}
+	function changeEvent(){
+		console.log("값이 변경되었습니다....")
+	}
+	function winResize(){
+		console.log("창의 크기가 변경되었습니다..");
+	}
+</script>
+
+</head>
+<body onresize="winResize()" onload="alert('어서오세요..')" onunload='alert("안녕히가세요..")'>
+<form name="logFrm" id="logFrm" method="post" action="loginOk.jsp" onsubmit="return logChk()"
+			onreset="chkReset();"
+			>
+	
+	<!-- 숫자만 입력되도록 제어하기 -->		
+	<input type="text" name="num" id="num" onkeydown="onlyNum()"/><br/>
+
+	아이디 : <input type="text" name="userid" id="userid" value="akdrh"
+			onfocus="this.style.backgroundColor='yellow'"
+			onblur="this.style.fontSize='2em'"
+			onchange="changeEvent()"
+			/><br/>
+			
+	비밀번호 : <input type="password" name="userpwd" id="userpwd"/><br/>
+	
+	<!-- submit기능이 있다 클릭만하면 -->
+	<input type="submit" value="로그인(submit)"/> <!-- 이걸 누르면 위에 onsubmit="return logChk()"로 넘어간다. -->
+	<button>로그인(buttonTag)</button> <!-- 이것도 type=submit인거다. 같은기능을함 onsubmit 이벤트가 여기도 작동  -->
+	<input type="image" src='../img/k1.jpg'/> <!-- 이것도 type=submit인거다. 같은기능을함 onsubmit 이벤트가 여기도 작동  -->
+
+	
+	<!-- submit기능이 없다. 그래서 자바스크립트에서 구현한다. -->
+	<input type="button" value="로그인(button)" onclick="loginCheck()"/> <!-- onclick으로 onsubmit과 같은 기능 구현 가능 -->
+
+
+	<input type="reset" value="다시쓰기"/>
+</form>
+								<!-- 여기서 this는 이 이벤트가 실행중인 img를 말함. -->
+<img src="../img/1.gif" onmousedown="this.src='../img/4.gif'" 
+						onmouseup="this.src='../img/k1.jpg'"
+						onmousemove="this.style.border='5px solid red';"/>
+						
+								
+<div id="div2" onmouseenter="getMouseoverEvent()" onmouseleave="getMouseoutEvent()">
+	<h1>onmouseenter, <i>onmouseleave</i> 테스트 중.....</h1>
+	<!-- 함수는 아래와 같은걸 쓰지만 이벤트가 다르다.-->
+</div>
+<div id="div1" onmouseover="getMouseoverEvent()" onmouseout="getMouseoutEvent()">
+	<h1>onmouseover, <i>onmouseout</i> 테스트 중.....</h1>
+</div>
+<div id="view"></div>
+<div id="view2"></div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device, initial-scale=1"/> <!-- 모바일로 접속할때 이걸 써야 화면이 모바일 화면에 맞게 조정된다. -->
+<style>
+	ul{
+		margin:0;
+		padding:0;
+		list-style-type:none;
+	}
+	ul>li{
+		background-color:lightblue;
+		margin:5px 0px;
+		border:1px solid #ddd;
+		width:100%;
+		float:left;
+	}
+	/*반응형 스타일 지정*/
+	/*		미디어 종류: all, screen, print, tv, projection,,,,,*/
+	@media all and (min-width:320px) and (max-width:600px){
+		/*사용자가 최저 320픽셀부터 최대 600p픽셀까지 보는중이면 설정한게 적용*/
+		ul>li{
+			background-color:#ddd;
+			font-family:궁서체;
+		}
+		ul>li>img{
+			width:100%;
+			display:none;
+		}
+	}
+	@media all and (min-width:601px) and (max-width:800px){
+		ul>li{
+			background-color:pink;
+		}
+	}
+	@media all and (min-width:801px){
+		ul>li{
+			background-color:orange;
+			width:49%;/*위에서 보더 설정한 픽셀때문에 float가 안먹혀서 줄임*/
+			height:10vh;
+			overflow:hidden;
+		}
+			
+	}
+	
+</style>
+</head>
+<body>
+<ul>
+	<li>이날 손영래 보건복지부 대변인은 정례 브리핑에서 “대한의사협회(의협)와 정부간 합의 내용은 이미 합의문으로 공개돼 있고, 
+		의대생들의 추가시험에 대한 내용은 합의사항에 없다”고 밝혔다.</li>
+	
+	<li>특히 ‘의료인 보호’에 관한 의정합의 4번 조항을 직접 읽으면서 “신종 코로나바이러스 감염증(코로나19)라고 하는 국가적 
+		위기상황에서 의료계와 정부가 협심해 총력으로 대응하고, 이에 필요한 의료인 보호와 구제대책을 정부가 적극적으로 검토하고 
+		실행한다는 것이 주요 내용”이라며 의사국시 추가 시행과는 관련이 없음을 거듭 강조했다.</li>
+		
+	<li>그는 “정부는 다수 의대생의 미래가 불필요하게 훼손되는 부작용을 우려해 당초 1일 시작 예정이던 의사 국시 실기시험 일정을 
+		8일로 한 차례 연기한 바 있고, 또 의협의 요청과 시험 신청 기간이 짧았던 점 등을 고려해 접수 기간과 시험 일자도 한 번 더 
+		연장하는 조치를 취한 바 있다”고 설명했다.</li>
+		
+	<li>이어 “그럼에도 불구하고 학생들은 본인들의 자유의지로 이를 거부했고, 스스로 시험을 거부하고 있는 상황에서 정부에 
+		추가시험을 검토하라고 하는 (의료계의) 요구는 가능하지 않은 것이라는 점을 다시 말씀드린다”고 덧붙였다.</li>
+		
+	<li>손 대변인은 아울러 “의대생들이 국가시험을 거부하는 상태기 때문에 현재 추가시험 검토에 대한 검토의 필요성이 상당히 
+		떨어진다고 보고 있고, 만약 검토에 들어간다고 하더라도 다른 국가시험과의 형평성, 공정성을 고려해 국민적인 합의가
+		 수반될 필요가 있다”고 말했다.</li>
+	
+	<li>선별과 보편 논쟁에 가려진 면이 있다는 지적도 있다. 이원재 LAB2050 대표는 페이스북에 "재난지원금 쟁점은 모두의 착각
+		(또는 의도적 오해)처럼 '선별지급이냐 보편지급이냐'가 아니라 '얼마나 거둬 얼마나 나눌 것인가'였다"며 "14조원이던 1차
+		 재난지원금 총액이 2차 때는 7조원 규모로 작아질 전망이다. 필요한 사람에게 두텁게 지급하자는 말이 공허한 이유"라고 주장했다. 
+		 이어 "덜 거둬 덜 나누자는 사람들이 승리했고, 더 거둬 더 나누자는 사람들이 패배했다"는 말이다.</li>	 
+		 
+	<li>
+		<img src="../img/k1.jpg"/>
+	</li>
+</ul>
+</body>
+</html>

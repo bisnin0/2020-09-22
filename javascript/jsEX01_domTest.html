@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function calculator(){
+		var n1 = document.getElementById("su1").value; //다큐멘트(바디)에서 아이디를 얻어오는데 su1을 얻어온다.
+		var n2 = document.getElementById("su2").value;
+		
+		//값의 입력 유무 확인
+		if(n1==""){ //자바스크립트는 null이란게 없다. equals도 안쓴다. ==를 쓴다.
+			alert("첫번째 데이터를 입력하세요");
+			document.getElementById("su1").focus(); //su1의 입력박스에 커서가 가있게된다. focus();
+			return false; //실행 종료.. 어떤데이터든 return을 넣으면 끝난다. false 안쓰고 return만 써도 된다.
+			
+		}
+		
+		if(n2==""){
+			alert("두번째 데이터를 입력하세요");
+			document.getElementById("su2").focus();
+			return false;
+		}
+		//계산
+
+		
+		/*var hap = parseInt(n1) + parseInt(n2); //문자를 숫자로 인식되게끔. 더하기에는 이렇게 해줘야한다.
+		var cha = n1 - n2;
+		var gob = n1 * n2;
+		var mok = n1 / n2; //%
+		
+		
+		var result = n1 + " +" + n2 + " = "+ hap+"<br/>" //숫자로 바꾸지 않고 그냥 +하면 문자+문자 로 계산된다.
+		result += n1 + " -" + n2 + " = "+ cha+"<br/>"
+		result += n1 + " *" + n2 + " = "+ gob+"<br/>"
+		result += n1 + " /" + n2 + " = "+ mok+"<br/>"
+		*/
+		var n1Int = parseInt(n1); //문자가 들어가도 모든 계산에서 숫자로 계산되게끔 정수로 바꾼 값을 넣어준다.
+		var n2Int = parseInt(n2);
+		var hap = n1Int + n2Int;
+		var cha = n1Int - n2Int;
+		var gob = n1Int * n2Int;
+		var mok = n1Int / n2Int; //%
+		
+		var result = n1Int + " +" + n2Int + " = "+ hap+"<br/>" //숫자로 바꾸지 않고 그냥 +하면 문자+문자 로 계산된다.
+		result += n1Int + " -" + n2Int + " = "+ cha+"<br/>"
+		result += n1Int + " *" + n2Int + " = "+ gob+"<br/>"
+		result += n1Int + " /" + n2Int + " = "+ mok+"<br/>"
+		document.getElementById("result1").innerHTML = result;
+	}
+
+</script>
+</style>
+</head>
+<body>
+첫번째수 : <input type="text" name="su1" id="su1"/>
+두번째수 : <input type="text" name="su2" id="su2"/>
+<input type="button" value="계산하기" onclick="calculator()"/>
+<div id="result1" style="background-color:lightblue"></div>
+</body>
+</html>

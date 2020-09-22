@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		margin:0;
+	}
+	#top1, #top2, #content{
+		width:1000px;
+		margin:0 auto;
+	}
+	#top1{
+		height:100px;
+		background-color:lightblue;
+	}
+	#top2{
+		height:100px;
+		background-color:pink;
+		text-align:center;
+		line-height:100px;
+	}	
+	#top2>input{
+		font-size:1.5em;
+		width:500px;
+	}
+	#bar{
+		height:3px;
+		background-color:blue;
+		position:relative;
+		z-index:100;
+	}
+	#content{
+		position:relative; /*이거 relative 하는 이유 : 배너를 이 안에 넣는게 목적이다. */
+	}
+	#content>img{
+		width:100%;
+	}
+	/*배너*/
+	#leftBanner{
+		position:absolute;
+		left:-100px; /*-100px 이런식으로 배치 할 수 있는것 기억하기*/
+		top:0px;
+		width:100px;
+		height:200px;
+		background-color:yellow;
+	}
+	#rightBanner{
+		position:absolute;
+		left:1000px;
+		top:0px;
+		width:100px;
+		height:300px;
+		background-color:#ddd;
+	}
+</style>
+<script>
+	function bannerMove(){
+		//console.log(window.scrollY);
+		//window.scrollY => 스크롤바의 top의 픽셀을 구한다.
+		var top = window.scrollY;
+		var header = 200;
+		if(document.getElementById("top1").style.display=="none"){
+			header=100;
+		}
+		if(top>header){
+			var y = top-header+"px";
+			document.getElementById("bar").style.top = top-header+"px";//bar의 좌표 셋팅
+			document.getElementById("leftBanner").style.top = y;
+			document.getElementById("rightBanner").style.top = y;
+		}		
+		if(top<header){
+			document.getElementById("bar").style.top = "0px";
+			document.getElementById("leftBanner").style.top = "0px";
+			document.getElementById("rightBanner").style.top = "0px";
+		}
+	}
+	var str = "회사 단톡방서 해방?…'업무용 카톡' 나오자마자";
+	//var cutCount = 1; 오른쪽방향
+	var cutCount = 0; //왼쪽방향
+	function textShow(){
+		//document.getElementById("txt").placeholder = str.slice(0,cutCount++); 오른쪽방향
+		document.getElementById("txt").placeholder =str.slice(cutCount++, str.length); //왼쪽방향
+		if(str.length < cutCount){
+			cutCount=1;
+		}
+		
+	}
+</script>
+</head>
+<body onscroll="bannerMove()" onload="setInterval('textShow()', 200)"> <!-- onscroll = 스크롤이 이동하면 이벤트 발생 -->
+<div id="top1" onclick="this.style.display='none'"></div>
+<div id="top2">
+	<input type="text" id="txt"/>
+</div>
+<div id="bar"></div>
+<div id="content">
+		<img src="../img/2.png"/>
+		<img src="../img/3.png"/>
+		<img src="../img/1.gif"/>
+		<img src="../img/flower.png"/>
+		<img src="../img/k1.jpg"/>	
+		<!-- 배너 -->
+		<div id="leftBanner"></div>
+		<div id="rightBanner"></div>
+</div>
+</body>
+</html>

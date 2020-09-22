@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>임베디드 스타일</title>
+<style> /*스타일 시트는 해드 태그에 모아놓는다. 제일 밑에 넣어도 적용은 되지만 여기 넣는게 약속*/
+	/* 스타일 시트의 주석문임.. 자바랑 똑같다
+
+	-선택자-
+	태그 선택자 : html태그를 이용한 선택자
+	
+		배경색			red gren blue 2글자씩..1글자씩도?			*/
+	body{background-color:#ddd}
+	h1{color:#00f} /*h1은 전부 블루로. rgb */	
+	/* 아이디 선택자 */
+	#txt{background-color:pink} /*id txt에 핑크색으로 배경색지정*/
+	/* 클래스 선택자 */
+	.fnt{  /*한줄에 한개씩이 기본.. 한줄에 쭉 써도 되지만 한줄 한개씩 쓰는게 뜯어보기 좋다.*/
+		color:red; 
+		background-color:yellow
+	} 
+	
+	h1.fnt{color:pink} /*h1은 태그 .fnt는 클래스 .. h1태그중에 fnt클래스인것*/
+	h1#txt{color:green}
+	
+	h1#txt, li.fnt{background-color:black}
+</style>
+
+</head>
+<body>
+<h1 id="txt">스타일시트 연습중</h1> <!-- id 지정 -->
+<ul>
+	<li class="fnt">java</li>  <!-- id를 여기쓰고 아래 쓸때 똑같은 이름으로 쓸 수 없다. 그럴땐 class를 써야함 -->
+	<li>javascript</li>
+	<li class="fnt">html</li>
+	<li>css</li>	
+</ul>
+<h1 class="fnt">스타일시트 연습중</h1>
+</body>
+</html>

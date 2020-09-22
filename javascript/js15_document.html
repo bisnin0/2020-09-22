@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/*
+	a:link{}
+	a:visited{}
+	a:active{}
+	a:hover{}
+	여기 주석처리한걸 스타일시트가 아닌곳에서 바로 할 수 있다. 
+	body에 link(링크가 걸려있을때), alink(누르고있을때), vlink(방문했을때)
+*/ 
+</style>
+</head>			<!--  링크가 걸려있을때,   누르고있을때 ,    방문했을때    -->
+<body bgColor="pink" link="red" alink="blue" vlink="green"> <!-- 아래 배경색을 여기서 바로 적용 가능하다. -->
+<a href="js01_start.html">자바스크립트 1</a>
+<a href="https://www.nate.com">네이트</a>
+<hr/>
+<script>
+	document.title = "도큐멘트에서 제목설정";
+	document.write("document.location->"+document.location); //프로토콜, port(포트)번호, 컨텍스트, 폴더, 파일명
+	document.write("<br/>document.URL->"+document.URL); //위에랑 결과 똑같음
+	document.write("<br/>document.domain->"+document.domain); //현재페이지 도메인 구하는 변수
+	
+	document.write("<br/>document.lastModified->"+document.lastModified); //마지막으로 파일 저장한 날짜
+	
+	//document.bgColor = "lightblue"; //배경색
+	document.write("<br/>document.bgColor->"+document.bgColor); //배경색 읽어서 출력
+	document.write("<br/>document.linkColor->"+document.linkColor+","
+					+" alinkColor->"+document.alinkColor+", vlinkColor="+document.vlinkColor);
+	//body에 속성으로 입력한 링크컬러들의 값을 출력하는것.
+	
+	//쿠키 = 사용자컴퓨터에 정보를 남겨야할때.
+	document.cookie = "abcd";
+	document.write("<br/>document.cookie->"+document.cookie);
+
+	
+	
+</script>
+</body>
+</html>
